@@ -4,7 +4,7 @@ import java.util.ArrayList;
 public class Id {
     //<id>		::= <let> | <let><id> | <let><int>	
     String identifier;
-    static ArrayList<Id> existingIds;
+    static ArrayList<Id> existingIds = new ArrayList<>();
 
 
     private Id(String name){
@@ -27,7 +27,9 @@ public class Id {
                     matchidx = i;
                     break;
                 }
-            }
+            } 
+            
+            
             if(!exists){
                 Id id = new Id(tokenizer.identifier);
                 existingIds.add(id);
@@ -48,6 +50,6 @@ public class Id {
     }
 
     public void print(){
-        
+        System.out.println(this.identifier);
     }
 }

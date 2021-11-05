@@ -15,6 +15,7 @@ public class DeclSeq {
         this.type = 1;
         this.decl = new Decl();
         this.decl.parse(tokenizer);
+        tokenizer.skipToken();
         if(tokenizer.token == 4){
             this.type = 2;
             this.declseq = new DeclSeq();
@@ -27,7 +28,10 @@ public class DeclSeq {
     }
 
     public void print(){
-        
+        this.decl.print();
+        if(this.type == 2){
+            this.declseq.print();
+        }
     }
 
 }

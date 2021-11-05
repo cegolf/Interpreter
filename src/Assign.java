@@ -44,6 +44,8 @@ public class Assign {
     }
 
     public void print(){
-        
+        this.id.print();
+        System.out.print("=");
+        this.exp.print();
     }
 }

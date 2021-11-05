@@ -60,10 +60,57 @@ public class Stmt {
     }
 
     public void execute(){
+        //assign
+        if(this.type == 1){
+            this.assign.execute();
+        }
 
+        // if 
+        if(this.type == 2){
+            this.ifstmt.execute();
+        }
+
+        //loop
+        if(this.type == 3){
+            this.loop.execute();
+        }
+
+        //input
+        if(this.type == 4){
+            this.in.execute();
+        }
+
+        //output
+        if(this.type == 5){
+            this.out.execute();
+        }
     }
 
     public void print(){
+        //assign
+        if(this.type == 1){
+            this.assign.print();
+        }
+
+        // if 
+        if(this.type == 2){
+            this.ifstmt.print();
+        }
+
+        //loop
+        if(this.type == 3){
+            this.loop.print();
+        }
+
+        //input
+        if(this.type == 4){
+            this.in.print();
+        }
+
+        //output
+        if(this.type == 5){
+            this.out.print();
+        }
         
     }
 }

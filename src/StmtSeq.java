@@ -26,8 +26,12 @@ public class StmtSeq {
     public void execute(){
 
     }
+    // <stmt seq>	::= <stmt> | <stmt> <stmt seq>
 
     public void print(){
-        
+        this.stmt.print();
+        if(this.type ==2 ){
+            this.seq.print();
+        }
     }
 }

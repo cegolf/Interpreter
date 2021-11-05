@@ -12,6 +12,7 @@ public class Decl {
     }
     public void parse(Tokenizer tokenizer) throws IOException{
         if(tokenizer.token == 4){
+            tokenizer.skipToken();
             this.idlist = new IdList();
             this.idlist.parse(tokenizer);
         }else{
@@ -25,6 +26,8 @@ public class Decl {
     }
 
     public void print(){
+        System.out.print("int");
+        this.idlist.print();
         
     }
 }

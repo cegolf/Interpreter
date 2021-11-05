@@ -29,7 +29,11 @@ public class Factor {
     }
 
     public void print(){
-        
+        this.op.print();
+        if(this.option == 2){
+            System.out.print("*");
+            this.fac.print();
+        }
     }
 
 }

@@ -39,8 +39,13 @@ public class Loop {
     public void execute(){
 
     }
+    //<loop>		::=	while <cond> loop <stmt seq> end;
 
     public void print(){
-        
+        System.out.print("while");
+        this.cond.print();
+        System.out.print("loop");
+        this.seq.print();
+        System.out.print("end;");
     }
 }

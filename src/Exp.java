@@ -12,7 +12,7 @@ public class Exp {
         this.exp = null;
     }
     public void parse(Tokenizer tokenizer) throws IOException{
-
+        this.type = 1;
         this.fac = new Factor();
         this.fac.parse(tokenizer);
         //add
@@ -33,9 +33,18 @@ public class Exp {
     public void execute(){
 
     }
-
+    // <exp>	::= <fac>|<fac>+<exp>|<fac>-<exp>	
     public void print(){
-        
+       this.fac.print();
+       if(this.type == 2){
+           System.out.println("+");
+           this.exp.print();
+       } 
+
+       if(this.type == 3){
+        System.out.println("-");
+        this.exp.print();
+       }
     }
 
 }

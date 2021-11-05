@@ -31,7 +31,11 @@ public class Comp {
     }
 
     public void print(){
-        
+        System.out.print("(");
+        this.op1.print();
+        System.out.print("<COMP OP>");
+        this.op2.print();
+        System.out.print(")");
     }
 
 }

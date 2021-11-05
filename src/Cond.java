@@ -69,8 +69,31 @@ public class Cond {
     public void execute(){
 
     }
-
+    // <cond>	::=	 <comp>|!<cond>	| [<cond> && <cond>] | [<cond> or <cond>]
     public void print(){
-        
+        if(this.type == 1){
+            this.cmpr.print();
+        }
+
+        if(this.type ==2){
+            System.out.print("!");
+            this.cond1.print();
+        }
+
+        if(this.type ==3){
+            System.out.print("[");
+            this.cond1.print();
+            System.out.print("&&");
+            this.cond2.print();
+            System.out.print("]");
+        }
+
+        if(this.type == 4){
+            System.out.print("[");
+            this.cond1.print();
+            System.out.print("||");
+            this.cond2.print();
+            System.out.print("]");
+        }
     }
 }
