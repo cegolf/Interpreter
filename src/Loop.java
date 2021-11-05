@@ -17,20 +17,20 @@ public class Loop {
         this.cond = new Cond();
         this.cond.parse(tokenizer);
         tokenizer.skipToken();
-        if(tokenizer.token == 9){
+        if(tokenizer.getToken() == 9){
             this.seq = new StmtSeq();
             this.seq.parse(tokenizer);
             tokenizer.skipToken();
-            if(tokenizer.token == 3){
+            if(tokenizer.getToken() == 3){
                 tokenizer.skipToken();
-                if(tokenizer.token == 12){
+                if(tokenizer.getToken() == 12){
                     tokenizer.skipToken();
                 }else{
-                    System.out.println("ERROR: Unexpeced Token - Loop - Expected ; (12) got: " + tokenizer.token);
+                    System.out.println("ERROR: Unexpeced Token - Loop - Expected ; (12) got: " + tokenizer.getToken());
                     System.exit(-1);
                 }
             }else{
-                System.out.println("ERROR: Unexpeced Token - Loop - Expected END (3) got: " + tokenizer.token);
+                System.out.println("ERROR: Unexpeced Token - Loop - Expected END (3) got: " + tokenizer.getToken());
                 System.exit(-1);
             }
         }

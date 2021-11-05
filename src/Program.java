@@ -15,7 +15,7 @@ public class Program {
 
     public void parse(Tokenizer tokenizer) throws IOException{
         tokenizer.skipToken();
-        if(tokenizer.token == 1){
+        if(tokenizer.getToken() == 1){
             tokenizer.skipToken();
             this.declseq = new DeclSeq();
             this.declseq.parse(tokenizer);
@@ -23,14 +23,14 @@ public class Program {
             this.seq = new StmtSeq();
             this.seq.parse(tokenizer);
             tokenizer.skipToken();
-            if(tokenizer.token == 3){
+            if(tokenizer.getToken() == 3){
                 tokenizer.skipToken();
             }else{
-                System.out.println("ERROR: Unexpeced Token - Program - Expected END (3) got " + tokenizer.token);
+                System.out.println("ERROR: Unexpeced Token - Program - Expected END (3) got " + tokenizer.getToken());
                 System.exit(-1);
             }
         }else{
-            System.out.println("ERROR: Unexpeced Token - Program - Expected INT (4) got " + tokenizer.token);
+            System.out.println("ERROR: Unexpeced Token - Program - Expected INT (4) got " + tokenizer.getToken());
             System.exit(-1);
         }
 

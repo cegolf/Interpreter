@@ -37,7 +37,6 @@ public class If {
     }
 
     public void execute(){
-
     }
     //<if>	::=	if <cond> then <stmt seq> end;|if <cond> then <stmt seq> else <stmt seq> end;
     public void print(){

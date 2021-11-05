@@ -18,7 +18,7 @@ public class Id {
 
     public static Id parse(Tokenizer tokenizer) throws IOException{
         tokenizer.getToken();
-        if(tokenizer.token == 32){
+        if(tokenizer.getToken() == 32){
             boolean exists = false;
             int matchidx = 0;
             for(int i=0; i< existingIds.size(); i ++){
@@ -39,7 +39,7 @@ public class Id {
                 return existingIds.get(matchidx);
             }   
         }else{
-            System.out.println("ERROR: Unexpeced Token - Id - Expected IDENTIFIER (32) got " + tokenizer.token);
+            System.out.println("ERROR: Unexpeced Token - Id - Expected IDENTIFIER (32) got " + tokenizer.getToken());
             System.exit(-1);
             return new Id();
         }

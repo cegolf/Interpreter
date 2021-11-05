@@ -12,16 +12,18 @@ public class Exp {
         this.exp = null;
     }
     public void parse(Tokenizer tokenizer) throws IOException{
+
+        // tokenizer is looking at a factor obj
         this.type = 1;
         this.fac = new Factor();
         this.fac.parse(tokenizer);
         //add
-        if(tokenizer.token == 22){
+        if(tokenizer.getToken() == 22){
             tokenizer.skipToken();
             this.type = 2;
             this.exp = new Exp();
             this.exp.parse(tokenizer);
-        }else if(tokenizer.token == 23){
+        }else if(tokenizer.getToken() == 23){
             tokenizer.skipToken();
             this.type = 3;
             this.exp = new Exp();

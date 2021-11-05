@@ -21,14 +21,14 @@ public class Stmt {
     public void parse(Tokenizer tokenizer) throws IOException{
 
         //case for assign
-        if(tokenizer.token == 32){
+        if(tokenizer.getToken() == 32){
             this.type = 1;
             this.assign = new Assign();
             this.assign.parse(tokenizer);
         }
 
         // case for if (starts with if keyword)
-        if(tokenizer.token == 5){
+        if(tokenizer.getToken() == 5){
             this.type = 2;
             this.ifstmt = new If();
             this.ifstmt.parse(tokenizer);
@@ -36,21 +36,21 @@ public class Stmt {
         }
 
         // case for loop  (starts with the while keyword)
-        if(tokenizer.token == 8){
+        if(tokenizer.getToken() == 8){
             this.type = 3;
             this.loop = new Loop();
             this.loop.parse(tokenizer);
         }
 
         // case for in
-        if(tokenizer.token == 10){
+        if(tokenizer.getToken() == 10){
             this.type = 4;
             this.in = new In();
             this.in.parse(tokenizer);
         }
 
         //case for out
-        if(tokenizer.token == 11){
+        if(tokenizer.getToken() == 11){
             this.type = 5;
             this.out = new Out();
             this.out.parse(tokenizer);

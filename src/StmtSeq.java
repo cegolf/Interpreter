@@ -16,7 +16,7 @@ public class StmtSeq {
         this.type = 1;
         this.stmt  = new Stmt();
         this.stmt.parse(tokenizer);
-        if(tokenizer.token == 32 || tokenizer.token == 5 || tokenizer.token == 8 || tokenizer.token ==  10 || tokenizer.token == 11){
+        if(tokenizer.getToken() == 32 || tokenizer.getToken() == 5 || tokenizer.getToken() == 8 || tokenizer.getToken() ==  10 || tokenizer.getToken() == 11){
             this.type= 2;
             this.seq = new StmtSeq();
             this.seq.parse(tokenizer);

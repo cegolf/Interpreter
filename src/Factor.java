@@ -16,7 +16,7 @@ public class Factor {
         this.option = 1;
         this.op = new Op();
         this.op.parse(tokenizer);
-        if(tokenizer.token == 24){
+        if(tokenizer.getToken() == 24){
             tokenizer.skipToken();
             this.option = 2;
             this.fac = new Factor();

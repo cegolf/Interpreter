@@ -20,7 +20,7 @@ public class IdList {
             this.id = Id.parse(tokenizer);
         }
         // id, idlist
-        if(tokenizer.token == 13){
+        if(tokenizer.getToken() == 13){
             this.type = 2;
             tokenizer.skipToken();
             this.idlist = new IdList();

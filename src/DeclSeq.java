@@ -16,7 +16,7 @@ public class DeclSeq {
         this.decl = new Decl();
         this.decl.parse(tokenizer);
         tokenizer.skipToken();
-        if(tokenizer.token == 4){
+        if(tokenizer.getToken() == 4){
             this.type = 2;
             this.declseq = new DeclSeq();
             this.declseq.parse(tokenizer);
