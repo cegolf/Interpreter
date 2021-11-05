@@ -1,3 +1,5 @@
+import java.io.IOException;
+
 public class In {
     //<in>	::=	read <id list>;		
     String line;
@@ -7,7 +9,11 @@ public class In {
         this.line = "";
         this.idlist = null;
     }
-    public void parse(Tokenizer tokenizer){
+    public void parse(Tokenizer tokenizer) throws IOException{
+        tokenizer.skipToken();
+        this.idlist = new IdList();
+        this.idlist.parse(tokenizer);
+        
 
     }
 

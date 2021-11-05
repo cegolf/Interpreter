@@ -31,8 +31,7 @@ public class Op {
                 System.exit(-1);
             } 
         }else if(tokenizer.token == 32){
-            this.id = new Id();
-            Id.parse(tokenizer);
+            this.id = Id.parse(tokenizer);
         }else{
             System.out.println("ERROR: Unexpected token - Op - Not part of Op grammar: " + tokenizer.token);
             System.exit(-1);

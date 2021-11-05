@@ -17,13 +17,13 @@ public class Assign {
             this.id.parse(tokenizer);  
         }else{
             //throw an unexpected token error
-            System.out.println("ERROR: Unexpected token");
+            System.out.println("ERROR: Unexpected token - Assign");
             System.exit(-1);
         }
         tokenizer.getToken();
         if(tokenizer.token != 14){
             //throw an unexpected token error
-            System.out.println("ERROR: Unexpected token");
+            System.out.println("ERROR: Unexpected token - Assign ");
             System.exit(-1);
         }
         tokenizer.skipToken();
@@ -33,7 +33,7 @@ public class Assign {
             this.exp.parse(tokenizer);
         }else{
             //throw an unexpected token error
-            System.out.println("ERROR: Unexpected token");
+            System.out.println("ERROR: Unexpected token -Assign");
             System.exit(-1);
         }
 

@@ -1,3 +1,5 @@
+import java.io.IOException;
+
 public class DeclSeq {
     // <decl> | <decl> <decl seq>
     int type;
@@ -9,7 +11,7 @@ public class DeclSeq {
         this.decl = null;
         this.declseq=null;
     }
-    public void parse(Tokenizer tokenizer){
+    public void parse(Tokenizer tokenizer) throws IOException{
         this.type = 1;
         this.decl = new Decl();
         this.decl.parse(tokenizer);

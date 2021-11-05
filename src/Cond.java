@@ -42,7 +42,7 @@ public class Cond {
                 if(tokenizer.token == 17){
                     tokenizer.skipToken();
                 }else{
-                    System.out.println("ERROR: Unexpeced Token");
+                    System.out.println("ERROR: Unexpeced Token - Cond");
                     System.exit(-1);
                 }
             }else if(tokenizer.token == 19){
@@ -53,15 +53,15 @@ public class Cond {
                 if(tokenizer.token == 17){
                     tokenizer.skipToken();
                 }else{
-                    System.out.println("ERROR: Unexpeced Token");
+                    System.out.println("ERROR: Unexpeced Token - Cond");
                     System.exit(-1);
                 }
             }else{
-                System.out.println("ERROR: Unexpeced Token");
+                System.out.println("ERROR: Unexpeced Token- Cond");
                 System.exit(-1);
             }
         }else{
-            System.out.println("ERROR: Unexpeced Token");
+            System.out.println("ERROR: Unexpeced Token - Cond");
             System.exit(-1);
         }
     }

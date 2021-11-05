@@ -1,7 +1,5 @@
 import java.io.IOException;
 
-import javax.swing.undo.StateEdit;
-
 public class StmtSeq {
     // <stmt seq>	::= <stmt> | <stmt> <stmt seq>
     int type;

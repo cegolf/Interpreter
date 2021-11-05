@@ -15,7 +15,7 @@ public class Program {
 
     public void parse(Tokenizer tokenizer) throws IOException{
         tokenizer.getToken();
-        if(tokenizer.token == 4){
+        if(tokenizer.token == 1){
             this.declseq = new DeclSeq();
             this.declseq.parse(tokenizer);
             tokenizer.skipToken();

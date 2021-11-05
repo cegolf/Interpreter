@@ -1,3 +1,5 @@
+import java.io.IOException;
+
 public class Decl {
     // int  <id list>;
     int type;
@@ -8,12 +10,12 @@ public class Decl {
         this.type = 0;
         this.idlist = null;
     }
-    public void parse(Tokenizer tokenizer){
+    public void parse(Tokenizer tokenizer) throws IOException{
         if(tokenizer.token == 4){
             this.idlist = new IdList();
             this.idlist.parse(tokenizer);
         }else{
-            System.out.println("ERROR: Unexpeced Token");
+            System.out.println("ERROR: Unexpeced Token - Decl - Expected INT got: " + tokenizer.token);
             System.exit(-1);
         }
     }

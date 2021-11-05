@@ -1,5 +1,7 @@
 public class Main {
     public static void main(String[] args) throws Exception {
-        System.out.println("Hello, World!");
+        Tokenizer t = new Tokenizer("src\\test.txt");
+        Program p = new Program();
+        p.parse(t);
     }
 }
