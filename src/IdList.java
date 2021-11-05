@@ -11,7 +11,7 @@ public class IdList {
         this.line = "";
         this.idlist = null;
     }
-    public void parse(){
+    public void parse(Tokenizer tokenizer){
 
     }
 

@@ -1,18 +1,22 @@
+import java.io.IOException;
+import java.util.ArrayList;
+
 public class Id {
     //<id>		::= <let> | <let><id> | <let><int>	
-    int type;
-    String letter;
-    Id id;
-    Int num;
+    String identifier;
+    ArrayList<Id> existingIds;
+
 
     Id(){
-        this.type = 0;
-        this.letter = "";
-        this.id = null;
-        this.num = null;
+        this.identifier = null;
     }
-    public void parse(){
-
+    public static Id parse(Tokenizer tokenizer) throws IOException{
+        tokenizer.getToken();
+        if(tokenizer.token ==32){
+            
+        }
+        
+        return new Id();
     }
 
     public void execute(){

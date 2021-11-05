@@ -8,7 +8,7 @@ public class Out {
         this.idlist = null;
     }
 
-    public void parse(){
+    public void parse(Tokenizer tokenizer){
 
     }
 
