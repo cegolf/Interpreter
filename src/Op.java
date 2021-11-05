@@ -41,7 +41,14 @@ public class Op {
         }
     }
 
-    public void execute(){
+    public int execute(){
+        if(this.type == 1){
+            return this.val;
+        }else if(this.type == 2){
+            return this.id.val;
+        }else{
+            return this.exp.execute();
+        }
 
     }
     //<op>	::= <int> | <id> | (<exp>)

@@ -12,13 +12,8 @@ public class Assign {
     public void parse(Tokenizer tokenizer) throws IOException{
 
         // if token is identifier
-        if(tokenizer.getToken() == 32){
-            this.id = Id.parse(tokenizer);
-        }else{
-            //throw an unexpected token error
-            System.out.println("ERROR: Unexpected token - Assign- Expected ID (32) got: " + tokenizer.getToken());
-            System.exit(-1);
-        }
+        this.id = Id.parse(tokenizer);
+        
         tokenizer.skipToken();
         if(tokenizer.getToken() != 14){
             //throw an unexpected token error
@@ -27,22 +22,22 @@ public class Assign {
         }
         tokenizer.skipToken();
 
-        if(tokenizer.getToken() == 20|| tokenizer.getToken() == 4 || tokenizer.getToken() == 32){
-            this.exp = new Exp();
-            this.exp.parse(tokenizer);
-        }else{
-            //throw an unexpected token error
-            System.out.println("ERROR: Unexpected token -Assign");
-            System.exit(-1);
-        }
-
+        this.exp = new Exp();
+        this.exp.parse(tokenizer);
+        
     }
 
     public void execute(){
-
+        int val = exp.execute();
+        this.id.val = val;
     }
 
-    public void print(){
+    public void print(int tabs){
+        int it = 0;
+        while(it < tabs){
+            System.out.print("\t");
+            it++;
+        }
         this.id.print();
         System.out.print("=");
         this.exp.print();

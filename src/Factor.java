@@ -24,8 +24,12 @@ public class Factor {
         }
     }
 
-    public void execute(){
-
+    public int execute(){
+        if(this.option == 1){
+            return this.op.execute();
+        }else{
+            return this.op.execute() * this.fac.execute();
+        }
     }
 
     public void print(){

@@ -15,6 +15,12 @@ public class Decl {
             tokenizer.skipToken();
             this.idlist = new IdList();
             this.idlist.parse(tokenizer);
+            if(tokenizer.getToken() == 12){
+                tokenizer.skipToken();
+            }else{
+                System.out.println("ERROR: Unexpeced Token - Decl");
+                System.exit(-1);
+            }
         }else{
             System.out.println("ERROR: Unexpeced Token - Decl - Expected INT got: " + tokenizer.getToken());
             System.exit(-1);
@@ -28,6 +34,7 @@ public class Decl {
     public void print(){
         System.out.print("int");
         this.idlist.print();
+        System.out.print(";");
         
     }
 }

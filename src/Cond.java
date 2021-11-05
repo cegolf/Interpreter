@@ -33,48 +33,30 @@ public class Cond {
             tokenizer.skipToken();
             this.cond1 = new Cond();
             this.cond1.parse(tokenizer);
-            tokenizer.skipToken();
             if(tokenizer.getToken() == 18){
+                this.type = 3;
                 tokenizer.skipToken();
-                this.cond2 = new Cond();
-                this.cond2.parse(tokenizer);
-                tokenizer.skipToken();
-                if(tokenizer.getToken() == 17){
-                    tokenizer.skipToken();
-                }else{
-                    System.out.println("---------------------------------");
-                    System.out.println("ERROR: Unexpected token - Cond ");
-                    System.out.println("Expected: ] (17)");
-                    System.out.println("Read: " + tokenizer.getToken());
-                    System.out.println("---------------------------------");
-                }
             }else if(tokenizer.getToken() == 19){
+                this.type = 4;
                 tokenizer.skipToken();
-                this.cond2 = new Cond();
-                this.cond2.parse(tokenizer);
-                tokenizer.skipToken();
-                if(tokenizer.getToken() == 17){
-                    tokenizer.skipToken();
-                }else{
-                    System.out.println("---------------------------------");
-                    System.out.println("ERROR: Unexpected token - Cond ");
-                    System.out.println("Expected: ] (17)");
-                    System.out.println("Read: " + tokenizer.getToken());
-                    System.out.println("---------------------------------");
-                }
             }else{
-                System.out.println("---------------------------------");
-                System.out.println("ERROR: Unexpected token - Cond ");
-                System.out.println("Expected: || (19)");
-                System.out.println("Read: " + tokenizer.getToken());
-                System.out.println("---------------------------------");
+                System.out.println("ERROR: Unexpected token in Cond");
+                System.out.println("Expected: && (18)or || (19) ");
+                System.out.println("Read: "  + tokenizer.getToken());
+                System.exit(-1);
             }
+            this.cond2 = new Cond();
+            this.cond2.parse(tokenizer);
+            if(tokenizer.getToken() != 17){
+                System.out.println("ERROR Unexpected token in Cond");
+                System.out.println("Expected ] (17)");
+                System.out.println("Read: " + tokenizer.getToken());
+                System.exit(-1);
+            }
+            tokenizer.skipToken();
         }else{
-            System.out.println("---------------------------------");
-            System.out.println("ERROR: Unexpected token - Cond ");
-            System.out.println("Expected: && (18)");
-            System.out.println("Read: " + tokenizer.getToken());
-            System.out.println("---------------------------------");
+            System.out.println("ERROR Unexpected token in Cond");
+            System.exit(-1);
         }
     }
 

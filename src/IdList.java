@@ -15,10 +15,8 @@ public class IdList {
     public void parse(Tokenizer tokenizer) throws IOException{
 
         // just an id
-        if(tokenizer.getToken() == 32){
-            this.type = 1;
-            this.id = Id.parse(tokenizer);
-        }
+        this.id = Id.parse(tokenizer);
+        this.type = 1;
         // id, idlist
         if(tokenizer.getToken() == 13){
             this.type = 2;

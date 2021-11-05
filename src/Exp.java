@@ -32,8 +32,14 @@ public class Exp {
 
     }
 
-    public void execute(){
-
+    public int execute(){
+        if(this.type == 2){
+            return this.fac.execute() + this.fac.execute();
+        }
+        if(this.type == 3){
+            return this.fac.execute() - this.fac.execute();
+        }
+        return this.fac.execute();
     }
     // <exp>	::= <fac>|<fac>+<exp>|<fac>-<exp>	
     public void print(){
